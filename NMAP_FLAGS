@@ -1,0 +1,107 @@
+#### Useful flags for NMAP for me to reference later if needed ###
+
+#Find active hosts with# 
+
+-sn
+
+you can also specfify the subnet
+
+#### Looks for all 255 hosts that may be up in that subnet ####
+
+Ex: nmap -sn 192.168.1.1/24
+
+
+#List all scanable targets with#
+
+-sL
+
+This only lists scanable targets, it does not actually scan them.
+
+# How to check for open ports #
+
+-sT
+
+nmap will try to complete a 3-way handshake with every TCP port.
+
+# Stealth Scans #
+
+-sS
+
+Only sends SYN packet, never completes the handshake.
+
+# Scanning UDP ports #
+
+-sU
+
+# Fast scan #
+
+-F
+
+Only scans 100 ports instead of 1,000
+
+# Specifying ports / port range #
+
+-p[range]
+
+EX: nmap 192.168.1.1 -p10-1024
+
+# Detecting Operating System #
+
+-o
+
+Not super accurate
+
+# Service and Version Detection #
+
+-sV
+
+# Want OS detection and Service/Version Detection? #
+
+-A 
+
+WABAM!
+
+# Want to scan down hosts? #
+
+-Pn
+
+WABAM!
+
+# Controlling scan speed #
+
+-T0 for paranoid
+-T1 for sneaky
+-T2 for polite
+-T3 for normal 
+-T4 for aggressive
+
+# Controlling number of Parallel Probes #
+
+--min-parallelism <amount>
+--max-parallelism <amount>
+
+# Control packets per second #
+
+--min-rate<number>
+--max-rate<number>
+
+# Maximum Wait time for hosts #
+
+--host--timeout
+
+# Verbosity #
+
+-v -vv -vv -vvvv
+
+	or 
+
+-v1 -v2 -v3 -v4
+
+# Debug mode (SO MUCH STUFF) #
+
+-d
+
+# Saving Results #
+
+-oN <name of file> (normal output)
+-oX <file> (XML output)
